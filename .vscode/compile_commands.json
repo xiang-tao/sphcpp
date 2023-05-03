@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/xt/github/sphcpp/.vscode/sph",
+  "command": "/usr/bin/c++   -I/home/xt/github/sphcpp/include  -g   -o CMakeFiles/hello.dir/hello.cpp.o -c /home/xt/github/sphcpp/sph/hello.cpp",
+  "file": "/home/xt/github/sphcpp/sph/hello.cpp"
+}
+]

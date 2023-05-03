@@ -1,0 +1,5 @@
+/home/xt/github/sphcpp/.vscode/CMakeFiles/rebuild_cache.dir
+/home/xt/github/sphcpp/.vscode/CMakeFiles/edit_cache.dir
+/home/xt/github/sphcpp/.vscode/sph/CMakeFiles/rebuild_cache.dir
+/home/xt/github/sphcpp/.vscode/sph/CMakeFiles/edit_cache.dir
+/home/xt/github/sphcpp/.vscode/sph/CMakeFiles/hello.dir

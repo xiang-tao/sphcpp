@@ -1,0 +1,2 @@
+第一步：mkdir .vscode
+第二步：cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -B .vscode ./
