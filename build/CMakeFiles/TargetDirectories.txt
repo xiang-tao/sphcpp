@@ -1,5 +1,6 @@
 /home/xt/github/sphcpp/build/CMakeFiles/rebuild_cache.dir
 /home/xt/github/sphcpp/build/CMakeFiles/edit_cache.dir
-/home/xt/github/sphcpp/build/sph/CMakeFiles/rebuild_cache.dir
-/home/xt/github/sphcpp/build/sph/CMakeFiles/edit_cache.dir
-/home/xt/github/sphcpp/build/sph/CMakeFiles/hello.dir
+/home/xt/github/sphcpp/build/src/CMakeFiles/rebuild_cache.dir
+/home/xt/github/sphcpp/build/src/CMakeFiles/edit_cache.dir
+/home/xt/github/sphcpp/build/src/CMakeFiles/test.dir
+/home/xt/github/sphcpp/build/src/CMakeFiles/hello.dir

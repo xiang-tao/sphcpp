@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Constants.h
+cmath
+-
+limits
+-
+string
+-
+
+../include/sph/kernel.h
+Constants.h
+../include/sph/Constants.h
+math.h
+-
+
+../include/sph/sphobject.h
+kernel.h
+../include/sph/kernel.h
+
+/home/xt/github/sphcpp/src/test.cpp
+sph/sphobject.h
+/home/xt/github/sphcpp/src/sph/sphobject.h
+iostream
+-
+
