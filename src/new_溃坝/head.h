@@ -10,14 +10,15 @@
 #define pi 3.14159265358979323846
 #define twopi 2 * 3.14159265358979323846
 
-#define dt 0.0001
+// #define dt 0.0001
 #define tmax 3.0
-#define out 0.02
+#define outt 0.02
 #define eps 0.5
 #define grx 0.0
-#define gry 9.81
+#define gry -9.81
 #define IBC 2
 #define CFL_number 0.2
+#define viscos_val 0.3 //粘度系数
 
 // #define mp 40
 // #define np 40
@@ -30,7 +31,9 @@
 struct str {
     int ntotal;
     int nvirt;
-    int ncases; //记录越界粒子数量
+    int ncases;                                   //记录越界粒子数量
+    double wab, frx, fry, frxi, frxj, fryi, fryj; //核函数相关值
+    double Awen, Bwen, adh;
     double new_dt;
     double B;
     int nstep_DBC;

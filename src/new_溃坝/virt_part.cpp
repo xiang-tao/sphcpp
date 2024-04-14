@@ -7,7 +7,6 @@ void virt_part(str* vari)
     void writevtk(str * vari, const int number, const int cc = 0);
 
     vari->nvirt = 0;
-    double v_inf = 1.0e-3;
     double dx = 0.03;
     double dy = 0.03;
     int nn = int(4.0 / dx);
@@ -62,9 +61,9 @@ void virt_part(str* vari)
     //虚粒子初始数据
     for (int i = 0; i < vari->nvirt; i++) {
         vari->rho[vari->ntotal + i] = 1000.0;
-        vari->rhoo[i] = 0.0;
+        vari->rhoo[vari->ntotal + i] = 0.0;
         vari->mass[vari->ntotal + i] = vari->rho[vari->ntotal + i] * dx * dy * 0.5;
-        vari->pvol[i] = vari->mass[i] / vari->rho[i];
+        vari->pvol[vari->ntotal + i] = vari->mass[vari->ntotal + i] / vari->rho[vari->ntotal + i];
         vari->p[vari->ntotal + i] = 0.0;
         vari->vo[0][vari->ntotal + vari->nvirt] = 0.0;
         vari->vo[1][vari->ntotal + vari->nvirt] = 0.0;

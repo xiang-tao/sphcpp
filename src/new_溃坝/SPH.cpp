@@ -15,6 +15,7 @@
 #include "single_step.cpp"
 #include "variable_time_step.cpp"
 #include "virt_part.cpp"
+#include "viscosity.cpp"
 #include "writevtk.cpp"
 #include <iostream>
 
@@ -44,16 +45,17 @@ int main()
     virt_part(vari); //获取虚粒子的位置及虚粒子的初始数据
     getdata(vari);
     ini_divide(vari, 0);
-    divide(vari, vari->nvirt, vari->ntotal + vari->nvirt, 0);
+    divide(vari, vari->ntotal, vari->ntotal + vari->nvirt, 0);
     keep_list(vari);
-    std::cout << vari->ntotal << " " << vari->nvirt << std::endl;
+    // std::cout << vari->ntotal << " " << vari->nvirt << std::endl;
     // std::cout << vari->ntotal << " " << vari->ncases << std::endl;
 
     //主循环
-    vari->new_dt = dt; //因为后续时间不长发生了变化
+    vari->new_dt = 0.0001; //因为后续时间步长发生了变化
     while (time < tmax) {
+        vari->visc_dt = 0.0;
         //设置每0.02s输出粒子属性相关信息到文件，用于可视化out=0.02,ngrab表示输出文件数量
-        if (time - out * ngrab >= out) {
+        if (time - outt * ngrab >= outt) {
             output = 1;
             ngrab += 1;
         } else {
@@ -64,11 +66,12 @@ int main()
         timestep += 1;
         if (output == 1) {
             writevtk(vari, ngrab, 1); //ngrab用于文件的编号,1表示输出虚粒子一起,0表示不含虚粒子输出
+            std::cout << "time=" << time << "  "
+                      << "dt=" << vari->new_dt << "  "
+                      << "step=" << timestep << std::endl;
         }
-        std::cout << "time=" << time << "  "
-                  << "dt=" << vari->new_dt << "  "
-                  << "step=" << timestep << std::endl;
     }
+    std::cout << "撞击出计算域的粒子有" << vari->ncases << "个." << std::endl;
 
     return 0;
 }

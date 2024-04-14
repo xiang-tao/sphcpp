@@ -24,18 +24,18 @@ void ac(str* vari)
                 int j1 = lx + ly * vari->ncx;
                 if (vari->nc[j1][kind_p1] > 0) {
                     int lx2 = lx + 1;
-                    if (lx2 <= vari->ncx) {
+                    if (lx2 < vari->ncx) {
                         cellij(vari, j1, j1 + 1, kind_p1, ini_kind_p2, lx2);
                     }
                     int ly2 = ly + 1;
-                    if (ly2 <= vari->ncy) {
+                    if (ly2 < vari->ncy) {
                         cellij(vari, j1, j1 + vari->ncx, kind_p1, ini_kind_p2, lx2);
                         lx2 = lx + 1;
-                        if (lx2 > 2) {
+                        if (lx2 > 1) {
                             cellij(vari, j1, j1 + vari->ncx - 1, kind_p1, ini_kind_p2, lx2);
                         }
                         lx2 = lx + 1;
-                        if (lx2 <= vari->ncx) {
+                        if (lx2 < vari->ncx) {
                             cellij(vari, j1, j1 + vari->ncx + 1, kind_p1, ini_kind_p2, lx2);
                         }
                     }

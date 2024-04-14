@@ -12,6 +12,11 @@ void getdata(str* vari)
 
     vari->nstep_DBC = 0;
 
+    //Wendland Quiintic kernel function系数
+    vari->Awen = 0.557 / vari->h2;
+    vari->Bwen = -2.7852 / (vari->h2 * vari->hsml);
+    vari->adh = vari->Awen;
+
     vari->eta = 0.1 * vari->hsml;
     vari->eta2 = vari->eta * vari->eta;
     vari->xmin = vari->x[0][vari->ntotal];

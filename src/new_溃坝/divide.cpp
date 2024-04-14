@@ -1,5 +1,6 @@
 #pragma once
 #include "head.h"
+#include <iostream>
 void divide(str* vari, int n_start, int n_end, int kind_p)
 {
     double dx = 0.0;
@@ -13,6 +14,10 @@ void divide(str* vari, int n_start, int n_end, int kind_p)
             kcell = int(dy * vari->one_over_2h) + 1;
             ii = icell + (kcell - 1) * vari->ncx;
             vari->nc[ii][kind_p] += 1;
+            if (vari->nc[ii][kind_p] > nplink_max) {
+                std::cout << "列表粒子超过了120" << std::endl;
+                exit(0);
+            }
             vari->ibox[ii][kind_p][vari->nc[ii][kind_p]] = k;
         }
     }

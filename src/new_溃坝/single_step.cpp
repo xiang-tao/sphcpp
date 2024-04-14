@@ -13,7 +13,7 @@ void single_step(str* vari)
 
     double dt2 = 0.5 * vari->new_dt;
     double rho0 = 1000.0;
-    int iDBC = 0;
+    int iDBC;
 
     //计算n时刻相关信息
     check_limits(vari);
@@ -67,8 +67,10 @@ void single_step(str* vari)
     divide(vari, 0, vari->ntotal, 1);
     ac(vari);
     correct(vari);
+
     variable_time_step(vari);
     vari->ddt_c = vari->min_dt;
+
     vari->new_dt = std::min(vari->ddt_c, vari->ddt_p);
 
     for (int i = 0; i < vari->ntotal; i++) {

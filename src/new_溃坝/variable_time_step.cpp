@@ -1,6 +1,7 @@
 #pragma once
 #include "head.h"
 #include <algorithm> //提供min,max等函数
+#include <iostream>
 void variable_time_step(str* vari)
 {
     double Fa_max = -1000.0;
@@ -20,7 +21,7 @@ void variable_time_step(str* vari)
         }
     }
     //计算使用手册公式p25页
-    double fa_sqrt = 0.0, dt_1 = 0.0, dt_2 = 0.0;
+    double fa_sqrt, dt_1, dt_2;
     if (i_fa >= 0) {
         fa_sqrt = pow((vari->av[0][i_fa] + grx) * (vari->av[0][i_fa] + grx) + (vari->av[1][i_fa] + gry) * (vari->av[1][i_fa] + gry), 0.25);
         dt_1 = sqrt(vari->hsml) / fa_sqrt;
@@ -35,4 +36,6 @@ void variable_time_step(str* vari)
         dt_2 = dt_1;
     }
     vari->min_dt = CFL_number * std::min(dt_1, dt_2);
+    // std::cout << "dt_1=" << dt_1 << "  "
+    //           << "dt_2" << dt_2 << std::endl;
 }

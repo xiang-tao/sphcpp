@@ -7,7 +7,7 @@ void input(str* vari)
     double dx = 0.03;
     double dy = 0.03;
     double rho0 = 1000.0;
-    double g = 9.8;
+    double g = 9.81;
     double gamma = 7.0;
     double c0 = 10.0;
     double h_SML = 2.0;

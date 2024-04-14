@@ -26,7 +26,7 @@ void particle(str* vari)
             vari->x[0][vari->ntotal] = i * dx + 0.5 * dx;
             vari->x[1][vari->ntotal] = j * dy - 0.5 * dy;
             vari->ntotal = vari->ntotal + 1;
-            vari->itype[vari->ntotal] = 2;
+            vari->itype[vari->ntotal] = 1;
         }
     }
     // output(vari, "vtk_coor.vtu");
